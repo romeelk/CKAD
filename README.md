@@ -25,4 +25,18 @@ set expandtab
 set shiftwidth=2
 ```
 
+## Docker and PODMAN setup
+
+For the exam you will need to understand how to build docker images using the docker commands.
+One alternative to docker is podman if you don't have a license:
+
+### Install Podman
+
+If you have a Mac install Podman via brew:
+Note if you have M1 archiecture make sure you intall the correct version.
+
+```
+    arch -arm64 brew install podman
+```
+    
 
