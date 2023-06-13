@@ -50,3 +50,12 @@ docker ps --all
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS                            PORTS                                                                                                                                  NAMES
 23df79fe8e23   romeelk/helloworld:1.0                "/bin/sh -c 'while t…"   14 seconds ago       Up 14 seconds         
 ```
+## Exporting a docker image
+
+Docker images are OCI compliant from default. However, you need to know how you would export the image:
+
+To export use the docker save command with -o flag and name of the export .tar file then the image you want to export.
+So for the romeelk/helloworld:1.0 image you do the following:
+```
+docker save -o helloworld.tar romeelk/helloworld:1.0  
+```
