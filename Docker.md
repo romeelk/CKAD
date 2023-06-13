@@ -72,3 +72,23 @@ Docker log takes output from stdout so
 docker logs a593a29c67ae
 ```
 Will list the echo statements
+
+## Stop the container
+
+You can stop a container by:
+```
+docker stop containerid
+```
+
+## Clean up
+
+Do a cleanup of stopped containers:
+
+```
+docker rm --force $(docker ps --all --quiet)
+```
+Cleanup images:
+
+```
+docker rmi --force $(docker images --all --quiet)
+```
