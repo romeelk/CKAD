@@ -59,3 +59,16 @@ So for the romeelk/helloworld:1.0 image you do the following:
 ```
 docker save -o helloworld.tar romeelk/helloworld:1.0  
 ```
+## Exporting a container
+
+To export a running container use the docker export command:
+
+```
+docker export -o  exportedhelloworldcontainer.tar  a593a29c67ae
+```
+
+Docker log takes output from stdout so
+```
+docker logs a593a29c67ae
+```
+Will list the echo statements
