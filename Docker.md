@@ -36,4 +36,17 @@ docker build -t romeelk/helloworld .
 ## Docker push
 docker push  romeelk/helloworld:1.0  
 
-## 
+## Docker run image 
+So just run the image:
+
+```
+docker run romeelk/helloworld:1.0
+```
+
+You can check the status:
+
+```
+docker ps --all
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS                            PORTS                                                                                                                                  NAMES
+23df79fe8e23   romeelk/helloworld:1.0                "/bin/sh -c 'while t…"   14 seconds ago       Up 14 seconds         
+```
