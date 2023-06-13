@@ -22,6 +22,14 @@ docker images --all
 
 ## Create your own Dockerfile
 
+Create a simple docker file that reads a file and prints it out in a loop
+```
+FROM alpine
+
+COPY file.txt .
+CMD while true ; do cat file.txt ; sleep 10 ; done
+```
+
 ## Docker build 
 docker build -t romeelk/helloworld . 
 
