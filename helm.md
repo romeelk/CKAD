@@ -66,10 +66,31 @@ REVISION        UPDATED                         STATUS          CHART           
 2               Wed Jun 14 11:10:55 2023        deployed        node-19.1.7     16.18.0         Upgrade complete
 ```
 
+## Rollback a chart to the first installed version
+
+By looking at the chart history you can use the revision number to roll back
+
+```
+helm rollback myrlease 1
+```
+
+The above will rollback to the release revision 1. If you do not specify the revision arg it will rollback to the previous revision.
+
 ## Uninstall a release
 
 To uninstall a release use the following:
 
 ```
 helm uninstall myrelease
+```
+
+## Searching a repo 
+
+If you want to search an installed repo use the helm search repo command
+
+```
+controlplane $ helm search repo node  
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+bitnami/node            19.1.7          16.18.0         DEPRECATED Node.js is a runtime environment bui...
+bitnami/node-exporter   3.5.3           1.6.0           Prometheus exporter for hardware and OS metrics...
 ```
