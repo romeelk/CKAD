@@ -56,3 +56,20 @@ To upgrade a chart to latest version use the following:
 ```
  helm upgrade myrelease bitnami/node
 ```
+
+## Check status of release
+
+```
+controlplane $ helm history myrelease
+REVISION        UPDATED                         STATUS          CHART           APP VERSION     DESCRIPTION     
+1               Wed Jun 14 11:10:16 2023        superseded      node-19.1.6     16.18.0         Install complete
+2               Wed Jun 14 11:10:55 2023        deployed        node-19.1.7     16.18.0         Upgrade complete
+```
+
+## Uninstall a release
+
+To uninstall a release use the following:
+
+```
+helm uninstall myrelease
+```
