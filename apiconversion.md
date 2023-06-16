@@ -41,3 +41,32 @@ chmod +x kubectl-convert
 mv kubectl-convert /usr/local/bin/kubectl-convert
 ```
 
+## Converting an ingress in beta to latest
+
+Run the following:
+
+```
+kubectl-convert -f ingress.yaml -o yaml > newver.yaml
+```
+
+Notice the version in the apiVer field has been updated
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  creationTimestamp: null
+  name: minimal-ingress
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - backend: {}
+        path: /testpath
+        pathType: Prefix
+status:
+  loadBalancer: {}
+```
