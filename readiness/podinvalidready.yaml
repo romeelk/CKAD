@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myappnotready
+  labels:
+    name: myapp
+spec:
+  restartPolicy: Always
+  containers:
+  - name: myapp
+    image: nginx
+    readinessProbe:
+      httpGet:
+        path: /incorrect
+    ports:
+      - containerPort: 80
+                                  
