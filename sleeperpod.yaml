@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleeper
+  labels:
+    name: sleeper
+spec:
+  containers:
+  - name: sleep
+    image: sleep
+    imagePullPolicy: Never
+    command: ["echo"]
+    args: ["hello"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
