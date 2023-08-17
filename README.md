@@ -11,7 +11,7 @@ Use the following to alias kubectl for generating dry run yaml output
 
 ```
 alias k=kubectl
-export do="--dry-run=client -o yaml"
+export do="--dry-run=client -oyaml"
 export now="--force --grace-period 0"
 ```
 
