@@ -6,7 +6,7 @@ If not K8s will not direct traffic via Service. Endpoints will not be created
 
 Liveness - is my app running ok?
 
-If not K8s will kill and restart the pod
+If not K8s will kill and restart the container
 
 ## Readiness that works
 
