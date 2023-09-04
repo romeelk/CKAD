@@ -133,7 +133,8 @@ nginx-stable/nginx-service-mesh                 2.0.0                           
 nginx-stable/nms                                1.9.0           NIM 2.13.0|ACM 1.8.0|ADM 4.0.0-ea.3     A chart for installing the NGINX Management Suite
 nginx-stable/nms-acm                            1.8.0           1.8.0                                   A Helm chart for Kubernetes                      
 nginx-stable/nms-adm                            4.0.0           4.0.0                                   A Helm chart for ADM                             
-nginx-stable/nms-hybrid                         2.13.0          2.13.0                                  A Helm chart for Kubernetes       ```
+nginx-stable/nms-hybrid                         2.13.0          2.13.0                                  A Helm chart for Kubernetes       
+```
 
 The latest version of nginx-stable/nginx-ingress is  CHART VERSION 0.18.1 and APP VERSION 3.2.1
 
@@ -144,6 +145,8 @@ First update repo
 ```
 helm repo update
 ```
+
+Then upgrade the release 
 ```
 helm upgrade devserver  nginx-stable/nginx-ingress -n team-yellow
 ```
@@ -158,3 +161,4 @@ devserver       team-yellow     3               2023-09-04 12:25:23.524515433 +0
 ```
 
 See the release of the chart is 0.18.1
+
