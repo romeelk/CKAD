@@ -83,3 +83,78 @@ helm install goechorel goecho --set replicatCount=6
 ## Uninstall the chart
 
 helm  uninstall goechorel   
+
+## List All helm releasee
+
+```
+helm list -A > /root/releases
+```
+
+## Unistall a release in a namespace
+
+List all helm in all namespace
+```
+helm list -A  
+```
+
+uninstall
+
+```
+helm uninstall apiserver -n team-yellow
+```
+
+## Install release nginx-stable/nginx-ingress into ns yellow
+
+```
+helm install dev-server nginx-stable/nginx-ingress -n team-yellow
+```
+
+## Upgrade the release
+
+Get list of charts repo:
+
+```
+helm repo list
+NAME            URL                               
+nginx-stable    https://helm.nginx.com/stable     
+bitnami         https://charts.bitnami.com/bitnami
+```
+
+Make sure you pick the right repo to search. In this case nginx-stable
+Search version of nginx chart 
+
+```
+helm search repo nginx-stable
+NAME                                            CHART VERSION   APP VERSION                             DESCRIPTION                                      
+nginx-stable/nginx-appprotect-dos-arbitrator    0.1.0           1.1.0                                   NGINX App Protect Dos arbitrator                 
+nginx-stable/nginx-devportal                    1.7.0           1.7.0                                   A Helm chart for deploying ACM Developer Portal  
+nginx-stable/nginx-ingress                      0.18.1          3.2.1                                   NGINX Ingress Controller                         
+nginx-stable/nginx-service-mesh                 2.0.0                                                   NGINX Service Mesh                               
+nginx-stable/nms                                1.9.0           NIM 2.13.0|ACM 1.8.0|ADM 4.0.0-ea.3     A chart for installing the NGINX Management Suite
+nginx-stable/nms-acm                            1.8.0           1.8.0                                   A Helm chart for Kubernetes                      
+nginx-stable/nms-adm                            4.0.0           4.0.0                                   A Helm chart for ADM                             
+nginx-stable/nms-hybrid                         2.13.0          2.13.0                                  A Helm chart for Kubernetes       ```
+
+The latest version of nginx-stable/nginx-ingress is  CHART VERSION 0.18.1 and APP VERSION 3.2.1
+
+We are interested in chart version: 0.18.1
+
+First update repo
+
+```
+helm repo update
+```
+```
+helm upgrade devserver  nginx-stable/nginx-ingress -n team-yellow
+```
+
+List the releae:
+
+```
+ helm -n team-yellow ls
+
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+devserver       team-yellow     3               2023-09-04 12:25:23.524515433 +0000 UTC deployed        nginx-ingress-0.18.1    3.2.1      
+```
+
+See the release of the chart is 0.18.1
