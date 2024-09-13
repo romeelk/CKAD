@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: dotnetapi
+  name: dotnetapi
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30007
+  selector:
+    run: dotnetapi 
+  type: NodePort
+status:
+  loadBalancer: {}
